@@ -1,0 +1,19 @@
+<html>
+    <head> <title>SOP Test</title> </head>
+    <body>
+        <h1>Testing SOP with FastAPI</h1>
+        <button onclick="fetchData()">Fetch Data from Backend</button>
+        <p id="response"></p>
+        <script>
+            function fetchData() {
+                fetch("http://localhost:8080/data/")
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("response").innerText = 
+                        JSON.stringify(data);
+                    })
+                    .catch(error => console.error("Error:", error));
+            }
+        </script>
+    </body>
+</html>
